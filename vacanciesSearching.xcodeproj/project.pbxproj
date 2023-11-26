@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F228D332B11F2D1004AAB1A /* SearchingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D322B11F2D1004AAB1A /* SearchingTextField.swift */; };
+		5F228D362B11FBD0004AAB1A /* VacanciesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D352B11FBD0004AAB1A /* VacanciesTableView.swift */; };
+		5F228D382B11FBEC004AAB1A /* VacanciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D372B11FBEC004AAB1A /* VacanciesTableViewCell.swift */; };
+		5F228D3B2B125169004AAB1A /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D3A2B125169004AAB1A /* UILabel + Extensions.swift */; };
+		5F228D3D2B127CEE004AAB1A /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D3C2B127CEE004AAB1A /* UIStackView + Extensions.swift */; };
+		5F228D3F2B137220004AAB1A /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D3E2B137220004AAB1A /* VacancyModel.swift */; };
 		5FE0491C2B11D425005EDE79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491B2B11D425005EDE79 /* AppDelegate.swift */; };
 		5FE0491E2B11D425005EDE79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491D2B11D425005EDE79 /* SceneDelegate.swift */; };
-		5FE049202B11D425005EDE79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491F2B11D425005EDE79 /* ViewController.swift */; };
+		5FE049202B11D425005EDE79 /* VacanciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491F2B11D425005EDE79 /* VacanciesViewController.swift */; };
 		5FE049252B11D426005EDE79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FE049242B11D426005EDE79 /* Assets.xcassets */; };
 		5FE049282B11D426005EDE79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE049262B11D426005EDE79 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F228D322B11F2D1004AAB1A /* SearchingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingTextField.swift; sourceTree = "<group>"; };
+		5F228D352B11FBD0004AAB1A /* VacanciesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesTableView.swift; sourceTree = "<group>"; };
+		5F228D372B11FBEC004AAB1A /* VacanciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesTableViewCell.swift; sourceTree = "<group>"; };
+		5F228D3A2B125169004AAB1A /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		5F228D3C2B127CEE004AAB1A /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		5F228D3E2B137220004AAB1A /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
 		5FE049182B11D425005EDE79 /* vacanciesSearching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vacanciesSearching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE0491B2B11D425005EDE79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE0491D2B11D425005EDE79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5FE0491F2B11D425005EDE79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5FE0491F2B11D425005EDE79 /* VacanciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesViewController.swift; sourceTree = "<group>"; };
 		5FE049242B11D426005EDE79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FE049272B11D426005EDE79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FE049292B11D426005EDE79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +47,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F228D2D2B11F1DD004AAB1A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5FE0491B2B11D425005EDE79 /* AppDelegate.swift */,
+				5FE0491D2B11D425005EDE79 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5F228D2E2B11F1FD004AAB1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F228D3E2B137220004AAB1A /* VacancyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F228D2F2B11F20B004AAB1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FE0491F2B11D425005EDE79 /* VacanciesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F228D302B11F217004AAB1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F228D342B11FB9D004AAB1A /* Cells */,
+				5F228D322B11F2D1004AAB1A /* SearchingTextField.swift */,
+				5F228D352B11FBD0004AAB1A /* VacanciesTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F228D312B11F242004AAB1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FE049242B11D426005EDE79 /* Assets.xcassets */,
+				5FE049262B11D426005EDE79 /* LaunchScreen.storyboard */,
+				5FE049292B11D426005EDE79 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F228D342B11FB9D004AAB1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F228D372B11FBEC004AAB1A /* VacanciesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5F228D392B125113004AAB1A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F228D3A2B125169004AAB1A /* UILabel + Extensions.swift */,
+				5F228D3C2B127CEE004AAB1A /* UIStackView + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5FE0490F2B11D425005EDE79 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +128,12 @@
 		5FE0491A2B11D425005EDE79 /* vacanciesSearching */ = {
 			isa = PBXGroup;
 			children = (
-				5FE0491B2B11D425005EDE79 /* AppDelegate.swift */,
-				5FE0491D2B11D425005EDE79 /* SceneDelegate.swift */,
-				5FE0491F2B11D425005EDE79 /* ViewController.swift */,
-				5FE049242B11D426005EDE79 /* Assets.xcassets */,
-				5FE049262B11D426005EDE79 /* LaunchScreen.storyboard */,
-				5FE049292B11D426005EDE79 /* Info.plist */,
+				5F228D2D2B11F1DD004AAB1A /* Application */,
+				5F228D2E2B11F1FD004AAB1A /* Models */,
+				5F228D302B11F217004AAB1A /* Views */,
+				5F228D2F2B11F20B004AAB1A /* Controllers */,
+				5F228D392B125113004AAB1A /* Extensions */,
+				5F228D312B11F242004AAB1A /* Resources */,
 			);
 			path = vacanciesSearching;
 			sourceTree = "<group>";
@@ -134,8 +208,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FE049202B11D425005EDE79 /* ViewController.swift in Sources */,
+				5F228D332B11F2D1004AAB1A /* SearchingTextField.swift in Sources */,
+				5FE049202B11D425005EDE79 /* VacanciesViewController.swift in Sources */,
+				5F228D3F2B137220004AAB1A /* VacancyModel.swift in Sources */,
 				5FE0491C2B11D425005EDE79 /* AppDelegate.swift in Sources */,
+				5F228D3D2B127CEE004AAB1A /* UIStackView + Extensions.swift in Sources */,
+				5F228D382B11FBEC004AAB1A /* VacanciesTableViewCell.swift in Sources */,
+				5F228D362B11FBD0004AAB1A /* VacanciesTableView.swift in Sources */,
+				5F228D3B2B125169004AAB1A /* UILabel + Extensions.swift in Sources */,
 				5FE0491E2B11D425005EDE79 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = vacanciesSearching/Info.plist;
+				INFOPLIST_FILE = vacanciesSearching/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -306,7 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = vacanciesSearching/Info.plist;
+				INFOPLIST_FILE = vacanciesSearching/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
