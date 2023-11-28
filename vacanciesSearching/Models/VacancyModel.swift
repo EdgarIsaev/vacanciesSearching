@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct VacancyModel: Decodable {
-    let items: [Item]
+struct Vacancies: Decodable {
+    let items: [VacancyModel]
     let alternateURL: String
 
     enum CodingKeys: String, CodingKey {
@@ -17,11 +17,11 @@ struct VacancyModel: Decodable {
     }
 }
 
-struct Item: Decodable {
-    let name: String
-    let salary: Salary
-    let employer: Employer
-    let snippet: Snippet
+struct VacancyModel: Decodable {
+    let name: String?
+    let salary: Salary?
+    let employer: Employer?
+    let snippet: Snippet?
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -37,11 +37,14 @@ struct Salary: Decodable {
     let gross: Bool
 }
 
-enum Currency: String, Codable {
+enum Currency: String, Decodable {
     case byr = "BYR"
     case kzt = "KZT"
     case rur = "RUR"
     case uzs = "UZS"
+    case usd = "USD"
+    case eur = "EUR"
+    case kgs = "KGS"
 }
 
 struct Employer: Decodable {
@@ -55,11 +58,11 @@ struct Employer: Decodable {
 }
 
 struct LogoUrls: Decodable {
-    let the90, the240: String
+    let the240: String
     let original: String
+    
 
     enum CodingKeys: String, CodingKey {
-        case the90 = "90"
         case the240 = "240"
         case original
     }

@@ -22,8 +22,6 @@ class SearchingTextField: UITextField {
     
     private func configure() {
         backgroundColor = .white
-        layer.borderWidth = 1
-        layer.borderColor = #colorLiteral(red: 1, green: 0.3394592702, blue: 0.4258575439, alpha: 1)
         layer.cornerRadius = 10
         textColor = .black
         leftView = UIView(frame: CGRect(x: 0,
@@ -34,6 +32,7 @@ class SearchingTextField: UITextField {
         clearButtonMode = .always
         returnKeyType = .done
         placeholder = "Введите ваш запрос"
+        addShadowOnView()
         translatesAutoresizingMaskIntoConstraints = false
     }
     

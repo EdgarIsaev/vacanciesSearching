@@ -15,6 +15,7 @@ extension UILabel {
         self.font = font
         self.textColor = textColor
         self.lineBreakMode = .byWordWrapping
+        self.textAlignment = .left
         self.adjustsFontSizeToFitWidth = true
         self.minimumScaleFactor = 0.5
         self.numberOfLines = lines

@@ -13,6 +13,12 @@
 		5F228D3B2B125169004AAB1A /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D3A2B125169004AAB1A /* UILabel + Extensions.swift */; };
 		5F228D3D2B127CEE004AAB1A /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D3C2B127CEE004AAB1A /* UIStackView + Extensions.swift */; };
 		5F228D3F2B137220004AAB1A /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D3E2B137220004AAB1A /* VacancyModel.swift */; };
+		5F228D412B139F07004AAB1A /* VacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D402B139F07004AAB1A /* VacancyViewModel.swift */; };
+		5F228D442B13BD1A004AAB1A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D432B13BD1A004AAB1A /* NetworkRequest.swift */; };
+		5F228D462B13C800004AAB1A /* NetworkFetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D452B13C800004AAB1A /* NetworkFetchData.swift */; };
+		5F228D482B13CC74004AAB1A /* NetworkImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D472B13CC74004AAB1A /* NetworkImageRequest.swift */; };
+		5F228D4A2B150F8B004AAB1A /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D492B150F8B004AAB1A /* String + Extensions.swift */; };
+		5F228D4C2B15371B004AAB1A /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F228D4B2B15371B004AAB1A /* UIView + Extensions.swift */; };
 		5FE0491C2B11D425005EDE79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491B2B11D425005EDE79 /* AppDelegate.swift */; };
 		5FE0491E2B11D425005EDE79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491D2B11D425005EDE79 /* SceneDelegate.swift */; };
 		5FE049202B11D425005EDE79 /* VacanciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0491F2B11D425005EDE79 /* VacanciesViewController.swift */; };
@@ -27,6 +33,12 @@
 		5F228D3A2B125169004AAB1A /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		5F228D3C2B127CEE004AAB1A /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		5F228D3E2B137220004AAB1A /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
+		5F228D402B139F07004AAB1A /* VacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewModel.swift; sourceTree = "<group>"; };
+		5F228D432B13BD1A004AAB1A /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		5F228D452B13C800004AAB1A /* NetworkFetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetchData.swift; sourceTree = "<group>"; };
+		5F228D472B13CC74004AAB1A /* NetworkImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageRequest.swift; sourceTree = "<group>"; };
+		5F228D492B150F8B004AAB1A /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
+		5F228D4B2B15371B004AAB1A /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		5FE049182B11D425005EDE79 /* vacanciesSearching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vacanciesSearching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE0491B2B11D425005EDE79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE0491D2B11D425005EDE79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,17 +71,18 @@
 		5F228D2E2B11F1FD004AAB1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F228D422B13BCE6004AAB1A /* Network */,
 				5F228D3E2B137220004AAB1A /* VacancyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5F228D2F2B11F20B004AAB1A /* Controllers */ = {
+		5F228D2F2B11F20B004AAB1A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5FE0491F2B11D425005EDE79 /* VacanciesViewController.swift */,
+				5F228D402B139F07004AAB1A /* VacancyViewModel.swift */,
 			);
-			path = Controllers;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5F228D302B11F217004AAB1A /* Views */ = {
@@ -78,6 +91,7 @@
 				5F228D342B11FB9D004AAB1A /* Cells */,
 				5F228D322B11F2D1004AAB1A /* SearchingTextField.swift */,
 				5F228D352B11FBD0004AAB1A /* VacanciesTableView.swift */,
+				5FE0491F2B11D425005EDE79 /* VacanciesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,8 +119,20 @@
 			children = (
 				5F228D3A2B125169004AAB1A /* UILabel + Extensions.swift */,
 				5F228D3C2B127CEE004AAB1A /* UIStackView + Extensions.swift */,
+				5F228D492B150F8B004AAB1A /* String + Extensions.swift */,
+				5F228D4B2B15371B004AAB1A /* UIView + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5F228D422B13BCE6004AAB1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5F228D432B13BD1A004AAB1A /* NetworkRequest.swift */,
+				5F228D452B13C800004AAB1A /* NetworkFetchData.swift */,
+				5F228D472B13CC74004AAB1A /* NetworkImageRequest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5FE0490F2B11D425005EDE79 = {
@@ -131,7 +157,7 @@
 				5F228D2D2B11F1DD004AAB1A /* Application */,
 				5F228D2E2B11F1FD004AAB1A /* Models */,
 				5F228D302B11F217004AAB1A /* Views */,
-				5F228D2F2B11F20B004AAB1A /* Controllers */,
+				5F228D2F2B11F20B004AAB1A /* ViewModels */,
 				5F228D392B125113004AAB1A /* Extensions */,
 				5F228D312B11F242004AAB1A /* Resources */,
 			);
@@ -212,10 +238,16 @@
 				5FE049202B11D425005EDE79 /* VacanciesViewController.swift in Sources */,
 				5F228D3F2B137220004AAB1A /* VacancyModel.swift in Sources */,
 				5FE0491C2B11D425005EDE79 /* AppDelegate.swift in Sources */,
+				5F228D412B139F07004AAB1A /* VacancyViewModel.swift in Sources */,
 				5F228D3D2B127CEE004AAB1A /* UIStackView + Extensions.swift in Sources */,
+				5F228D4A2B150F8B004AAB1A /* String + Extensions.swift in Sources */,
 				5F228D382B11FBEC004AAB1A /* VacanciesTableViewCell.swift in Sources */,
+				5F228D462B13C800004AAB1A /* NetworkFetchData.swift in Sources */,
+				5F228D442B13BD1A004AAB1A /* NetworkRequest.swift in Sources */,
+				5F228D4C2B15371B004AAB1A /* UIView + Extensions.swift in Sources */,
 				5F228D362B11FBD0004AAB1A /* VacanciesTableView.swift in Sources */,
 				5F228D3B2B125169004AAB1A /* UILabel + Extensions.swift in Sources */,
+				5F228D482B13CC74004AAB1A /* NetworkImageRequest.swift in Sources */,
 				5FE0491E2B11D425005EDE79 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
