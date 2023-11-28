@@ -14,7 +14,7 @@ class NetworkFetchData {
     
     func fetchData(text: String, page: Int = 0, response: @escaping(Vacancies?, Error?) -> Void) {
          
-        NetworkRequest.shared.requestData(text: text, page: page) { result in
+        NetworkRequest.shared.requestData(requestText: text, page: page) { result in
             switch result {
                 
             case .success(let data):

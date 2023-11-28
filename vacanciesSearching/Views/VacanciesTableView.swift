@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol VacanciesTableViewProtocol: AnyObject {
+    func selectedCell(index: IndexPath)
+    func deselectedCell(index: IndexPath)
+}
 class VacanciesTableView: UITableView {
 
+    weak var tableViewDelegate: VacanciesTableViewProtocol?
+    
     private var vacancies = [VacancyModel]()
     private var page = 0
     private var searchingText = ""
@@ -74,7 +80,6 @@ extension VacanciesTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idVacanciesTableViewCell, for: indexPath) as? VacanciesTableViewCell else { return UITableViewCell() }
         
-        
         let model = vacancies[indexPath.row]
         cell.setupViews(model: model)
         
@@ -92,7 +97,11 @@ extension VacanciesTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        tableViewDelegate?.selectedCell(index: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableViewDelegate?.deselectedCell(index: indexPath)
     }
 }
 
@@ -100,6 +109,7 @@ extension VacanciesTableView: UITableViewDelegate {
 
 extension VacanciesTableView: UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
         let index = indexPath.row
         if index == vacancies.count - 6 {
             fetchMoreData()

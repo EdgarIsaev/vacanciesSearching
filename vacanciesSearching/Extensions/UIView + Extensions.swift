@@ -25,4 +25,8 @@ extension UIView {
             })
         })
     }
+    
+    func hideView() {
+        self.isHidden = true
+    }
 }

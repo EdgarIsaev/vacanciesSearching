@@ -41,6 +41,7 @@ class VacanciesTableViewCell: UITableViewCell {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .white
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor.lightGray.cgColor
         imageView.clipsToBounds = true
@@ -62,6 +63,7 @@ class VacanciesTableViewCell: UITableViewCell {
     
     private var salaryStackView = UIStackView()
     private var verticalStackView = UIStackView()
+    private var describingStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -96,46 +98,43 @@ class VacanciesTableViewCell: UITableViewCell {
                                                            salaryStackView,
                                                            employerNameLabel],
                                         axis: .vertical, spacing: 10)
+        describingStackView = UIStackView(arrangedSubViews: [requirementLabel,
+                                                             responsibilityLabel],
+                                          axis: .vertical,
+                                          spacing: 5)
         backgroundCell.addSubview(verticalStackView)
-        backgroundCell.addSubview(requirementLabel)
-        backgroundCell.addSubview(responsibilityLabel)
-    }
-    
-    private func hidingView(view: UIView) {
-        view.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        backgroundCell.addSubview(describingStackView)
     }
     
     public func setupViews(model: VacancyModel) {
         nameLabel.text = model.name?.trimHTMLTags()
+        employerNameLabel.text = model.employer?.name.trimHTMLTags()
+        
         if model.salary?.from != nil {
             salaryFromLabel.text = "от \(model.salary?.from ?? 0)"
-        } else { salaryFromLabel.isHidden = true }
+        } else { salaryFromLabel.hideView() }
         
         if model.salary?.to != nil {
             salaryToLabel.text = "до \(model.salary?.to ?? 0)"
-        } else { salaryToLabel.isHidden = true }
+        } else { salaryToLabel.hideView() }
       
         if salaryFromLabel.isHidden && salaryToLabel.isHidden {
-            hidingView(view: currencyLabel)
+            currencyLabel.hideView()
         } else {
             guard let currency = model.salary?.currency.rawValue else { return }
             currencyLabel.text = currency
         }
         
-        employerNameLabel.text = model.employer?.name
-        
         if model.snippet?.requirement != nil {
             requirementLabel.text = model.snippet?.requirement?.trimHTMLTags()
-            requirementLabel.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        } else { hidingView(view: requirementLabel) }
+        } else { requirementLabel.hideView() }
         
         if model.snippet?.responsibility != nil {
             responsibilityLabel.text = model.snippet?.responsibility?.trimHTMLTags()
-            responsibilityLabel.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        } else { hidingView(view: responsibilityLabel) }
+        } else { responsibilityLabel.hideView() }
         
         if model.employer?.logoUrls == nil {
-            logoImageView.isHidden = true
+            logoImageView.hideView()
         } else {
             guard let urlString = model.employer?.logoUrls?.the240 else { return }
             NetworkImageRequest.shared.imageFetch(imageUrl: urlString) { [weak self] result in
@@ -176,13 +175,10 @@ extension VacanciesTableViewCell {
             verticalStackView.trailingAnchor.constraint(equalTo: logoImageView.leadingAnchor, constant: -10),
             verticalStackView.bottomAnchor.constraint(equalTo: requirementLabel.topAnchor, constant: -10),
             
-            requirementLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
-            requirementLabel.leadingAnchor.constraint(equalTo: backgroundCell.leadingAnchor, constant: 10),
-            requirementLabel.trailingAnchor.constraint(equalTo: backgroundCell.trailingAnchor, constant: -10),
-            
-            responsibilityLabel.topAnchor.constraint(equalTo: requirementLabel.bottomAnchor, constant: 10),
-            responsibilityLabel.leadingAnchor.constraint(equalTo: backgroundCell.leadingAnchor, constant: 10),
-            responsibilityLabel.trailingAnchor.constraint(equalTo: backgroundCell.trailingAnchor, constant: -10)
+            describingStackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
+            describingStackView.leadingAnchor.constraint(equalTo: backgroundCell.leadingAnchor, constant: 10),
+            describingStackView.trailingAnchor.constraint(equalTo: backgroundCell.trailingAnchor, constant: -10),
+            describingStackView.bottomAnchor.constraint(equalTo: backgroundCell.bottomAnchor, constant: -10)
         ])
     }
 }

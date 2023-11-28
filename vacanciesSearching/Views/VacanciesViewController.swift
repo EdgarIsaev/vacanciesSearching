@@ -27,11 +27,15 @@ class VacanciesViewController: UIViewController {
         bindViewModel()
         bindTableView()
         getText()
+        addGesture()
         setConstraints()
     }
     
     private func configure() {
         view.backgroundColor = #colorLiteral(red: 0.9564198852, green: 0.9451850057, blue: 0.8892086744, alpha: 1)
+        
+        vacanciesTableView.tableViewDelegate = self
+        searchingTextField.delegate = self
     }
     
     private func addSubviews() {
@@ -72,6 +76,37 @@ class VacanciesViewController: UIViewController {
 
     }
     
+    private func addGesture() {
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapScreen)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+}
+
+//MARK: VacanciesTableViewProtocol
+
+extension VacanciesViewController: VacanciesTableViewProtocol {
+    func selectedCell(index: IndexPath) {
+        vacanciesTableView.cellForRow(at: index)?.isSelected = true
+    }
+    
+    func deselectedCell(index: IndexPath) {
+        vacanciesTableView.cellForRow(at: index)?.isSelected = false
+    }
+}
+
+//MARK: UITextFieldDelegate
+
+extension VacanciesViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchingTextField.resignFirstResponder()
+        return true
+    }
 }
 
 //MARK: SetConstraints

@@ -12,9 +12,10 @@ class NetworkRequest {
     static let shared = NetworkRequest()
     private init(){}
     
-    func requestData(text: String, page: Int, completion: @escaping(Result<Data, Error>) -> Void ) {
+    func requestData(requestText: String, page: Int, completion: @escaping(Result<Data, Error>) -> Void ) {
         
-        let urlString = "https://api.hh.ru/vacancies/?text=%22\(text)%22&per_page=20&page=\(page)"
+        guard let text = requestText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        let urlString = "https://api.hh.ru/vacancies/?text=\(text)&per_page=20&page=\(page)"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
