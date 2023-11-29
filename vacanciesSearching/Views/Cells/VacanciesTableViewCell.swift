@@ -31,8 +31,9 @@ class VacanciesTableViewCell: UITableViewCell {
                                         textColor: .black,
                                         lines: 1)
     
-    private let employerNameLabel = UILabel(font: .systemFont(ofSize: 20, weight: .light),
-                                            textColor: .gray)
+    private let employerNameLabel = UILabel(font: .systemFont(ofSize: 15, weight: .light),
+                                            textColor: .gray,
+                                            lines: 2)
     private let requirementLabel = UILabel(font: .systemFont(ofSize: 13, weight: .light),
                                            textColor: .black)
     private let responsibilityLabel = UILabel(font: .systemFont(ofSize: 13, weight: .light),
